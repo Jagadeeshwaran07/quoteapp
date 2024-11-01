@@ -13,11 +13,6 @@
         android:theme="@style/Theme.QuotesApp"
         tools:targetApi="31">
         <activity
-            android:name=".ScrollingActivity"
-            android:exported="false"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.QuotesApp.NoActionBar" />
-        <activity
             android:name=".AddEditActivity"
             android:exported="false"
             android:label="@string/title_activity_add_edit"
