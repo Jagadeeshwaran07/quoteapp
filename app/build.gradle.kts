@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+//    kapt(libs.room.compiler)
+//    ksp(libs.room.compiler)
+    alias(libs.plugins.ksp)
+
 
 
 
@@ -9,6 +13,13 @@ plugins {
 android {
     namespace = "com.example.quotesapp"
     compileSdk = 34
+
+
+    configurations {
+        all {
+            exclude(group = "com.intellij", module = "annotations")
+        }
+    }
 
     defaultConfig {
         applicationId = "com.example.quotesapp"
@@ -42,7 +53,11 @@ android {
 }
 
 dependencies {
-    
+
+    implementation(libs.room.runtime)
+    implementation(libs.room.compiler)
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -53,4 +68,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
 }
